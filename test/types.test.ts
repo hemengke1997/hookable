@@ -88,4 +88,19 @@ describe("hook types", () => {
       }
     });
   });
+
+  test("callback parameters", () => {
+    const hooks = createHooks<{
+      foo: (arg: number) => void;
+    }>();
+
+    hooks.addHooks({
+      foo: () => {}
+    })
+
+    // @ts-expect-error
+    hooks.callHook('foo', '')
+
+    hooks.callHook('foo', 42)
+  })
 });

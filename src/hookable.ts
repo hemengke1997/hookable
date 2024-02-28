@@ -11,9 +11,8 @@ import type {
   HookKeys,
 } from "./types";
 
-type InferCallback<HT, HN extends keyof HT> = HT[HN] extends HookCallback
-  ? HT[HN]
-  : never;
+type InferCallback<HT, HN extends keyof HT> = HT[HN] extends HookCallback ? HT[HN] : never;
+
 type InferSpyEvent<HT extends Record<string, any>> = {
   [key in keyof HT]: {
     name: key;
@@ -24,7 +23,7 @@ type InferSpyEvent<HT extends Record<string, any>> = {
 
 export class Hookable<
   HooksT extends Record<string, any> = Record<string, HookCallback>,
-  HookNameT extends HookKeys<HooksT> = HookKeys<HooksT>
+  HookNameT extends HookKeys<HooksT> = HookKeys<HooksT>,
 > {
   private _hooks: { [key: string]: HookCallback[] };
   private _before?: HookCallback[];
@@ -189,7 +188,7 @@ export class Hookable<
   callHook<NameT extends HookNameT>(
     name: NameT,
     ...arguments_: Parameters<InferCallback<HooksT, NameT>>
-  ): Promise<any> {
+  ): ReturnType<InferCallback<HooksT, NameT>> {
     arguments_.unshift(name);
     return this.callHookWith(serialTaskCaller, name, ...arguments_);
   }
@@ -197,7 +196,7 @@ export class Hookable<
   callHookParallel<NameT extends HookNameT>(
     name: NameT,
     ...arguments_: Parameters<InferCallback<HooksT, NameT>>
-  ): Promise<any[]> {
+  ): ReturnType<InferCallback<HooksT, NameT>> {
     arguments_.unshift(name);
     return this.callHookWith(parallelTaskCaller, name, ...arguments_);
   }
@@ -212,7 +211,7 @@ export class Hookable<
     caller: CallFunction,
     name: NameT,
     ...arguments_: Parameters<InferCallback<HooksT, NameT>>
-  ): ReturnType<CallFunction> {
+  ): ReturnType<InferCallback<HooksT, NameT>> {
     const event =
       this._before || this._after
         ? { name, args: arguments_, context: {} }
