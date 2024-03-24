@@ -2,6 +2,217 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v6.0.0
+
+
+### 🚀 Enhancements
+
+  - Rewrite for 1.0.0 ([88decae](https://github.com/unjs/hookable/commit/88decae))
+  - Custom logger ([ada6e37](https://github.com/unjs/hookable/commit/ada6e37))
+  - Optional fatal support for logger ([7c7355d](https://github.com/unjs/hookable/commit/7c7355d))
+  - DeprecateHooks ([62f2d38](https://github.com/unjs/hookable/commit/62f2d38))
+  - Hide deprecate warnings on production builds ([0861df3](https://github.com/unjs/hookable/commit/0861df3))
+  - Bundle package ([53a2a0e](https://github.com/unjs/hookable/commit/53a2a0e))
+  - Advanced deprecation ([5b88628](https://github.com/unjs/hookable/commit/5b88628))
+  - Allow removing registered hooks ([#16](https://github.com/unjs/hookable/pull/16))
+  - Migrate to typescript ([d63ea3e](https://github.com/unjs/hookable/commit/d63ea3e))
+  - Allow disabling logger ([f8fb742](https://github.com/unjs/hookable/commit/f8fb742))
+  - **types:** Implement strict types ([823cdca](https://github.com/unjs/hookable/commit/823cdca))
+  - HookOnce ([225fa8a](https://github.com/unjs/hookable/commit/225fa8a))
+  - `mergeHooks` helper ([#26](https://github.com/unjs/hookable/pull/26))
+  - **pkg:** Expose module format ([2987b09](https://github.com/unjs/hookable/commit/2987b09))
+  - ⚠️  Improve type checking ([c2e1e22](https://github.com/unjs/hookable/commit/c2e1e22))
+  - ⚠️  Drop browser build and use exports field ([b626770](https://github.com/unjs/hookable/commit/b626770))
+  - ⚠️  Use named exports and expose createHooks ([fadfcbd](https://github.com/unjs/hookable/commit/fadfcbd))
+  - Drop logger and global error handler ([ee6ea87](https://github.com/unjs/hookable/commit/ee6ea87))
+  - `callHookParallel` and `callHookWith` ([#35](https://github.com/unjs/hookable/pull/35))
+  - Add `beforeEach` and `afterEach` spies ([#46](https://github.com/unjs/hookable/pull/46))
+  - Allow registering a hook without showing deprecated message ([0fcd787](https://github.com/unjs/hookable/commit/0fcd787))
+  - Add `createDebugger` utility ([#51](https://github.com/unjs/hookable/pull/51))
+  - Add function name to hook for better dx in stacktraces ([#68](https://github.com/unjs/hookable/pull/68))
+  - Use `console.createTask` to improve traces where supported ([#69](https://github.com/unjs/hookable/pull/69))
+  - Add `removeAllHooks` utility ([#61](https://github.com/unjs/hookable/pull/61))
+
+### 🔥 Performance
+
+  - Minor refactor ([e4083aa](https://github.com/unjs/hookable/commit/e4083aa))
+  - Handle fn as array faster ([ec35edc](https://github.com/unjs/hookable/commit/ec35edc))
+  - Reduce transpiled dist size ([df607cf](https://github.com/unjs/hookable/commit/df607cf))
+  - Use for in for hookObj ([3c8e2e7](https://github.com/unjs/hookable/commit/3c8e2e7))
+
+### 🩹 Fixes
+
+  - Bind hookObj to this context ([6f6f7bc](https://github.com/unjs/hookable/commit/6f6f7bc))
+  - **package:** Lib ~> dist ([34a8d5c](https://github.com/unjs/hookable/commit/34a8d5c))
+  - Hook with array or falsy key ([7e90de1](https://github.com/unjs/hookable/commit/7e90de1))
+  - Fix package.json (2) ([7ff4ce9](https://github.com/unjs/hookable/commit/7ff4ce9))
+  - Revert back hooks ([07f52dc](https://github.com/unjs/hookable/commit/07f52dc))
+  - **pkg:** Typo in types entry name ([#19](https://github.com/unjs/hookable/pull/19))
+  - **build:** Exclude regenerator and update target to ie 11 ([48acfc5](https://github.com/unjs/hookable/commit/48acfc5))
+  - Typecheck for flatHooks ([7800190](https://github.com/unjs/hookable/commit/7800190))
+  - Expose types ([0ffbaff](https://github.com/unjs/hookable/commit/0ffbaff))
+  - Avoid creating extra wrapper when merging hooks ([790c1c4](https://github.com/unjs/hookable/commit/790c1c4))
+  - Allow nested hooks type to omit some hooks ([#28](https://github.com/unjs/hookable/pull/28))
+  - Allow type inference for `hook`, `hookOnce` and `removeHook` ([#29](https://github.com/unjs/hookable/pull/29))
+  - Type nested/namespaced hooks ([#32](https://github.com/unjs/hookable/pull/32))
+  - Always return caller result ([e9c51df](https://github.com/unjs/hookable/commit/e9c51df))
+  - Handle deprecated hooks after being registred ([23d9ff4](https://github.com/unjs/hookable/commit/23d9ff4))
+  - Deprecate hooks doesn't have to be passed all hooks ([#48](https://github.com/unjs/hookable/pull/48))
+  - Ensure calling hooks always returns a promise ([44679c8](https://github.com/unjs/hookable/commit/44679c8))
+  - Only specify return type for `callHook`/`callHookParallel` ([ed0d6a8](https://github.com/unjs/hookable/commit/ed0d6a8))
+  - Show deprecation warning only once ([526e4dc](https://github.com/unjs/hookable/commit/526e4dc))
+  - Accept any hookable ([#53](https://github.com/unjs/hookable/pull/53))
+  - Handle case where hook adds debugger ([#54](https://github.com/unjs/hookable/pull/54))
+  - Allow parallel hooks with unique time strings ([#55](https://github.com/unjs/hookable/pull/55))
+  - Add types subpath export ([211ee2e](https://github.com/unjs/hookable/commit/211ee2e))
+  - Shift name out of arg array ([#71](https://github.com/unjs/hookable/pull/71))
+  - Clone hook arrays before calling ([#79](https://github.com/unjs/hookable/pull/79))
+  - Hook callback parameters type ([ebf1583](https://github.com/unjs/hookable/commit/ebf1583))
+
+### 💅 Refactors
+
+  - Remove items-promise dependency ([cc85aec](https://github.com/unjs/hookable/commit/cc85aec))
+  - Use internal _logger reference ([c2a286a](https://github.com/unjs/hookable/commit/c2a286a))
+  - Avoid one line ifs ([b79063b](https://github.com/unjs/hookable/commit/b79063b))
+  - Simplify deprecateHooks ([ea44f40](https://github.com/unjs/hookable/commit/ea44f40))
+  - Remove `clearHook` and `clearHooks` as we have `removeHook` and `removeHooks` now ([50025fd](https://github.com/unjs/hookable/commit/50025fd))
+  - ⚠️  Remove mergehooks from Hookable prototype ([d50af59](https://github.com/unjs/hookable/commit/d50af59))
+  - Use unbuild ([50f0004](https://github.com/unjs/hookable/commit/50f0004))
+  - Split debugger ([76db216](https://github.com/unjs/hookable/commit/76db216))
+
+### 📖 Documentation
+
+  - Remove invalid use of `callHookParallel` ([#17](https://github.com/unjs/hookable/pull/17))
+  - Fix small typo in README ([#31](https://github.com/unjs/hookable/pull/31))
+  - Update context ([#44](https://github.com/unjs/hookable/pull/44))
+  - Update badges ([13b0c90](https://github.com/unjs/hookable/commit/13b0c90))
+  - Add `removeAllHooks` and fix typos ([#72](https://github.com/unjs/hookable/pull/72))
+
+### 🌊 Types
+
+  - Work with strict config ([#63](https://github.com/unjs/hookable/pull/63))
+
+### 🏡 Chore
+
+  - **release:** 0.0.2 ([01a3857](https://github.com/unjs/hookable/commit/01a3857))
+  - **release:** 0.0.3 ([374282a](https://github.com/unjs/hookable/commit/374282a))
+  - **release:** 0.0.4 ([ff454df](https://github.com/unjs/hookable/commit/ff454df))
+  - **release:** 0.0.5 ([fb51c14](https://github.com/unjs/hookable/commit/fb51c14))
+  - **release:** 0.0.6 ([6b21906](https://github.com/unjs/hookable/commit/6b21906))
+  - Update readme ([29236d0](https://github.com/unjs/hookable/commit/29236d0))
+  - **release:** 0.0.7 ([a72a9cc](https://github.com/unjs/hookable/commit/a72a9cc))
+  - **release:** 1.0.0 ([a0e5c7a](https://github.com/unjs/hookable/commit/a0e5c7a))
+  - **release:** 1.0.1 ([c4f8783](https://github.com/unjs/hookable/commit/c4f8783))
+  - **release:** 2.0.0 ([71db2f6](https://github.com/unjs/hookable/commit/71db2f6))
+  - **release:** 2.0.1 ([69b4795](https://github.com/unjs/hookable/commit/69b4795))
+  - **release:** 2.1.0 ([2860582](https://github.com/unjs/hookable/commit/2860582))
+  - **release:** 2.2.0 ([55cf5c0](https://github.com/unjs/hookable/commit/55cf5c0))
+  - **release:** 2.2.1 ([59e7482](https://github.com/unjs/hookable/commit/59e7482))
+  - Remove unnecessary binds ([95ca9e9](https://github.com/unjs/hookable/commit/95ca9e9))
+  - **release:** 2.3.0 ([791542b](https://github.com/unjs/hookable/commit/791542b))
+  - Add ts types ([3943d93](https://github.com/unjs/hookable/commit/3943d93))
+  - Add babel-jest for fixing test ([0d30bd4](https://github.com/unjs/hookable/commit/0d30bd4))
+  - Update renovate ([da6859f](https://github.com/unjs/hookable/commit/da6859f))
+  - Add jest transform ([3fb5251](https://github.com/unjs/hookable/commit/3fb5251))
+  - Update yarn lock ([fb84112](https://github.com/unjs/hookable/commit/fb84112))
+  - Use prepublishOnly ([1c2b340](https://github.com/unjs/hookable/commit/1c2b340))
+  - Upgrade eslint packages ([179b614](https://github.com/unjs/hookable/commit/179b614))
+  - Fix coverage report ([75d900a](https://github.com/unjs/hookable/commit/75d900a))
+  - **release:** 3.0.0 ([1a5cbc7](https://github.com/unjs/hookable/commit/1a5cbc7))
+  - Rename to hookable ([9c62ae9](https://github.com/unjs/hookable/commit/9c62ae9))
+  - Add @RGBboy to creadits ([fbe4306](https://github.com/unjs/hookable/commit/fbe4306))
+  - Update dependencies ([1f296a4](https://github.com/unjs/hookable/commit/1f296a4))
+  - Update repo ([81ce3c7](https://github.com/unjs/hookable/commit/81ce3c7))
+  - Fix test and eslint ([3d3b199](https://github.com/unjs/hookable/commit/3d3b199))
+  - Use github actions ([f28dacd](https://github.com/unjs/hookable/commit/f28dacd))
+  - **release:** 4.0.0 ([7fd52df](https://github.com/unjs/hookable/commit/7fd52df))
+  - **release:** 4.1.0 ([add4cd9](https://github.com/unjs/hookable/commit/add4cd9))
+  - Remove unused badge ([6adec04](https://github.com/unjs/hookable/commit/6adec04))
+  - **release:** 4.1.1 ([2b15871](https://github.com/unjs/hookable/commit/2b15871))
+  - **readme:** Fix url ([#21](https://github.com/unjs/hookable/pull/21))
+  - **release:** 4.1.2 ([85d66a7](https://github.com/unjs/hookable/commit/85d66a7))
+  - Update dependencies ([00a071a](https://github.com/unjs/hookable/commit/00a071a))
+  - **release:** 4.2.0 ([7393a92](https://github.com/unjs/hookable/commit/7393a92))
+  - Update dependencies ([9020f43](https://github.com/unjs/hookable/commit/9020f43))
+  - **release:** 4.3.0 ([e521dfb](https://github.com/unjs/hookable/commit/e521dfb))
+  - Update repo and improve dist ([191b7e2](https://github.com/unjs/hookable/commit/191b7e2))
+  - **release:** 4.3.1 ([f69f8a7](https://github.com/unjs/hookable/commit/f69f8a7))
+  - Fix ci ([48bb82c](https://github.com/unjs/hookable/commit/48bb82c))
+  - **release:** 4.4.0 ([4d9fc75](https://github.com/unjs/hookable/commit/4d9fc75))
+  - **release:** 4.4.1 ([2ae8c9b](https://github.com/unjs/hookable/commit/2ae8c9b))
+  - Update org ([ae9e030](https://github.com/unjs/hookable/commit/ae9e030))
+  - Update dev dependencies ([8b845fd](https://github.com/unjs/hookable/commit/8b845fd))
+  - Fix eslint issues ([a225469](https://github.com/unjs/hookable/commit/a225469))
+  - Update github action ([9219ce0](https://github.com/unjs/hookable/commit/9219ce0))
+  - **release:** 5.0.0-0 ([b730909](https://github.com/unjs/hookable/commit/b730909))
+  - Add migration guide ([7e29e07](https://github.com/unjs/hookable/commit/7e29e07))
+  - **release:** 5.0.0-1 ([3071d29](https://github.com/unjs/hookable/commit/3071d29))
+  - **release:** 5.0.0-2 ([739d483](https://github.com/unjs/hookable/commit/739d483))
+  - **release:** 5.0.0 ([f05c66c](https://github.com/unjs/hookable/commit/f05c66c))
+  - Add codecov action ([0188c21](https://github.com/unjs/hookable/commit/0188c21))
+  - **release:** 5.1.0 ([bd49129](https://github.com/unjs/hookable/commit/bd49129))
+  - **release:** 5.1.1 ([b053d3e](https://github.com/unjs/hookable/commit/b053d3e))
+  - Migrate to pnpm + vitest ([#45](https://github.com/unjs/hookable/pull/45))
+  - **release:** 5.1.2 ([2ca03b8](https://github.com/unjs/hookable/commit/2ca03b8))
+  - Remove jest config ([203db13](https://github.com/unjs/hookable/commit/203db13))
+  - Update repo ([5a46409](https://github.com/unjs/hookable/commit/5a46409))
+  - **release:** 5.2.0 ([5738def](https://github.com/unjs/hookable/commit/5738def))
+  - **release:** 5.2.1 ([4459dc6](https://github.com/unjs/hookable/commit/4459dc6))
+  - **release:** 5.2.2 ([daf5c96](https://github.com/unjs/hookable/commit/daf5c96))
+  - **release:** 5.3.0 ([22a2f77](https://github.com/unjs/hookable/commit/22a2f77))
+  - **release:** 5.4.0 ([1793beb](https://github.com/unjs/hookable/commit/1793beb))
+  - Update dependencies ([a61f494](https://github.com/unjs/hookable/commit/a61f494))
+  - **release:** 5.4.1 ([4cfc67a](https://github.com/unjs/hookable/commit/4cfc67a))
+  - **release:** 5.4.2 ([c3c2413](https://github.com/unjs/hookable/commit/c3c2413))
+  - Add latest `@types/node` package ([#66](https://github.com/unjs/hookable/pull/66))
+  - Add `.prettierrc` ([4b3e99b](https://github.com/unjs/hookable/commit/4b3e99b))
+  - Use changelogen for releases ([151d16b](https://github.com/unjs/hookable/commit/151d16b))
+  - Simplify variable names ([369a2fe](https://github.com/unjs/hookable/commit/369a2fe))
+  - **release:** V5.5.0 ([eb3b1c5](https://github.com/unjs/hookable/commit/eb3b1c5))
+  - **release:** V5.5.1 ([2a492ff](https://github.com/unjs/hookable/commit/2a492ff))
+  - **lint:** Run lint:fix to fix formatting ([#77](https://github.com/unjs/hookable/pull/77))
+  - Update dependencies ([9443040](https://github.com/unjs/hookable/commit/9443040))
+  - **release:** V5.5.2 ([aff2fa5](https://github.com/unjs/hookable/commit/aff2fa5))
+  - Update deps ([8b5765f](https://github.com/unjs/hookable/commit/8b5765f))
+  - **release:** V5.5.3 ([ddc01ba](https://github.com/unjs/hookable/commit/ddc01ba))
+
+### ✅ Tests
+
+  - Ensure package.json main field is valid ([#2](https://github.com/unjs/hookable/pull/2))
+  - Use es modules ([2ddf40c](https://github.com/unjs/hookable/commit/2ddf40c))
+  - Import hable.js ([293fcbb](https://github.com/unjs/hookable/commit/293fcbb))
+  - Fix vitest type issue ([#70](https://github.com/unjs/hookable/pull/70))
+
+### 🎨 Styles
+
+  - Format with prettier ([#65](https://github.com/unjs/hookable/pull/65))
+
+### 🤖 CI
+
+  - Update ci config ([e8b664f](https://github.com/unjs/hookable/commit/e8b664f))
+
+#### ⚠️  Breaking Changes
+
+  - ⚠️  Improve type checking ([c2e1e22](https://github.com/unjs/hookable/commit/c2e1e22))
+  - ⚠️  Drop browser build and use exports field ([b626770](https://github.com/unjs/hookable/commit/b626770))
+  - ⚠️  Use named exports and expose createHooks ([fadfcbd](https://github.com/unjs/hookable/commit/fadfcbd))
+  - ⚠️  Remove mergehooks from Hookable prototype ([d50af59](https://github.com/unjs/hookable/commit/d50af59))
+
+### ❤️  Contributors
+
+- Hemengke <23536175@qq.com>
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+- Daniel Roe ([@danielroe](http://github.com/danielroe))
+- Rafał Chłodnicki ([@rchl](http://github.com/rchl))
+- Vinccool96 <Vinccool96@gmail.com>
+- Nozomu Ikuta ([@NozomuIkuta](http://github.com/NozomuIkuta))
+- Sébastien Chopin <seb@nuxtjs.com>
+- Markthree ([@markthree](http://github.com/markthree))
+- Alex Barker ([@abarke](http://github.com/abarke))
+- Voraczech ([@voraczech](http://github.com/voraczech))
+- Matthieu Sieben 
+- Clark Du <clark.duxin@gmail.com>
+
 ## v5.5.3
 
 [compare changes](https://github.com/unjs/hookable/compare/v5.5.2...v5.5.3)
