@@ -1,7 +1,10 @@
 {
-  "name": "hookable",
+  "name": "@minko-fe/hookable",
   "version": "6.0.0",
   "description": "Awaitable hook system",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "hook",
     "hookable",
@@ -9,7 +12,10 @@
     "tapable",
     "tappable"
   ],
-  "repository": "unjs/hookable",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hemengke1997/hookable.git"
+  },
   "license": "MIT",
   "exports": {
     "import": "./dist/index.mjs",

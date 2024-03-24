@@ -1,4 +1,4 @@
-export type HookCallback = (...arguments_: any) => any
+export type HookCallback = (...arguments_: any) => any;
 export interface Hooks {
   [key: string]: HookCallback;
 }

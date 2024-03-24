@@ -95,12 +95,12 @@ describe("hook types", () => {
     }>();
 
     hooks.addHooks({
-      foo: () => {}
-    })
+      foo: () => {},
+    });
 
     // @ts-expect-error
-    hooks.callHook('foo', '')
+    hooks.callHook("foo", "");
 
-    hooks.callHook('foo', 42)
-  })
+    hooks.callHook("foo", 42);
+  });
 });

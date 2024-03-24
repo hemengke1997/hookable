@@ -11,7 +11,9 @@ import type {
   HookKeys,
 } from "./types";
 
-type InferCallback<HT, HN extends keyof HT> = HT[HN] extends HookCallback ? HT[HN] : never;
+type InferCallback<HT, HN extends keyof HT> = HT[HN] extends HookCallback
+  ? HT[HN]
+  : never;
 
 type InferSpyEvent<HT extends Record<string, any>> = {
   [key in keyof HT]: {
@@ -23,7 +25,7 @@ type InferSpyEvent<HT extends Record<string, any>> = {
 
 export class Hookable<
   HooksT extends Record<string, any> = Record<string, HookCallback>,
-  HookNameT extends HookKeys<HooksT> = HookKeys<HooksT>,
+  HookNameT extends HookKeys<HooksT> = HookKeys<HooksT>
 > {
   private _hooks: { [key: string]: HookCallback[] };
   private _before?: HookCallback[];
